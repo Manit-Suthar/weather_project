@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast | Pro Weather</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-container">
+        <div class="background-gradient"></div>
+        <div id="weather-effects"></div> </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-cloud-bolt"></i> SkyCast
+            </div>
+            <button id="theme-toggle" class="theme-btn" title="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <section class="search-box">
+            <div class="input-wrapper">
+                <i class="fa-solid fa-location-dot location-icon"></i>
+                <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                <ul id="suggestions-list" class="suggestions-list hidden"></ul>
+            </div>
+            
+            <button id="search-btn" class="action-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button id="location-btn" class="action-btn secondary" title="Use current location"><i class="fa-solid fa-location-crosshairs"></i></button>
+        </section>
+
+        <div id="error-message" class="error hidden">
+            <p>City not found. Please try again.</p>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <main id="weather-content" class="hidden">
+            <article class="weather-card">
+                <div class="card-header">
+                    <h2 id="city-name">--</h2>
+                    <p id="date-time">--</p>
+                </div>
+                
+                <div class="card-body">
+                    <div class="temp-container">
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <h1 id="temperature">--°C</h1>
+                    </div>
+                    <p id="condition-text">--</p>
+
+                    <div class="lifestyle-container">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <p id="lifestyle-tip">Loading...</p>
+                    </div>
+                </div>
+            </article>
+
+            <section class="weather-details">
+                <div class="detail-card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div>
+                        <p>Humidity</p>
+                        <h4 id="humidity">--%</h4>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <i class="fa-solid fa-wind"></i>
+                    <div>
+                        <p>Wind Speed</p>
+                        <h4 id="wind-speed">-- kph</h4>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <div>
+                        <p>Cloud Cover</p>
+                        <h4 id="cloud-cover">--%</h4>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <i class="fa-solid fa-eye"></i>
+                    <div>
+                        <p>Visibility</p>
+                        <h4 id="visibility">-- km</h4>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
